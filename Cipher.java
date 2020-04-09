@@ -1,4 +1,3 @@
-
 import java.util.*;
 import java.lang.*;
 import java.io.*;
@@ -19,7 +18,7 @@ public class Cipher{
                 }  
                 DecryptTranspositionCipher(c.getText(), space);
         }
-
+        
         public static void cipher(String message, int offset) {
                 StringBuilder result = new StringBuilder();
                 for (char character : message.toCharArray()) {
@@ -34,7 +33,7 @@ public class Cipher{
                 }
                 System.out.println(result);
         }
-        public static void DecryptTranspositionCipher(String plainText, int key){
+             public static void DecryptTranspositionCipher(String plainText, int key){
              String[] words = plainText.split("\\s+");
               String outputstring = "";
                 int[] pos = new int[key];
@@ -42,15 +41,17 @@ public class Cipher{
                         pos[i] = i;
                 }
                 Perm x = new Perm(pos);
+                Freq y = new Freq();
                 for(int l = 0; l < factorial(key); l++){
                         pos = x.get(l);
                         System.out.println(Arrays.toString(pos));
                         for(int k = 0; k < words.length; k++){
                         for(int i = 0; i < 5; i++){
-                                try{System.out.print(words[k].charAt(pos[i]));}catch(Exception e){}
+                                try{System.out.print(words[k].charAt(pos[i])); if( l == 0) { y.inc(words[k].charAt(pos[i])); }}catch(Exception e){}
                         }}
                         System.out.println("\n");  
                 }
+                y.print();
           }
         static int factorial(int n){    
           if (n == 0)    
