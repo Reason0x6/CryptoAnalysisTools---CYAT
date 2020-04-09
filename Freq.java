@@ -9,9 +9,12 @@ public class Freq{
                         count.put(x , 0);
                 }
         }
-
+        
         public void inc(char x){
                 int curr = count.get(x);
                 count.put(x, ++curr);
+        }
+        public void print(){
+                System.out.println("Freq count: " + count.toString());
         }
 }
