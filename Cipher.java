@@ -1,3 +1,13 @@
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+public class Cipher{
+        public static void main(String args[]) {
+                In c = new In(args[0]);
+                for(int i = 0; i < 26; i++){
+                        System.out.print("Caesar Offset: " + i + " :: ");
+                        cipher(c.getText() , i);
                         System.out.println();
                 }
                 int space = 0;
@@ -9,6 +19,7 @@
                 }  
                 DecryptTranspositionCipher(c.getText(), space);
         }
+
         public static void cipher(String message, int offset) {
                 StringBuilder result = new StringBuilder();
                 for (char character : message.toCharArray()) {
