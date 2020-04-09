@@ -1,1 +1,7 @@
-# comp3260-brute
+# comp3260 Brute Force Solving
+
+------
+
+Currently tests
+Basic transposition
+ceaser 
