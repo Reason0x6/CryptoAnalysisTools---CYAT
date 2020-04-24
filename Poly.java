@@ -8,7 +8,7 @@ public class Poly{
         this.plaintext = "";
     }
 
-    public void Vig_decrypt(){
+    public void decrypt(){
         ArrayList<ArrayList<Character>> vignere = new ArrayList<>();
         String alphabet = "abcdefghijklmnopqrstuvwxyz";
         for (int i = 0; i < 26; i++) {
@@ -36,4 +36,20 @@ public class Poly{
         System.out.println("Key         : " + key);
         System.out.println("Plain Text  : " + plaintext);
     }
+
+    public void getSplit(int kLength){
+        String no_space = ciphertext.replaceAll("\\s+", "");
+        String[] texts = new String[kLength];
+        for(int i = 0; i <kLength; i++){
+           texts[i] = "";
+        }
+        for(int i = 0; i < no_space.length(); i++){
+            texts[i%kLength] += no_space.charAt(i);
+        }
+        for(int i = 0; i <kLength; i++){
+            System.out.println(texts[i].toString() + "\n");
+        }
+        
+    }
+    
 }
