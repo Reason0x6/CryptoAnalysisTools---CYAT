@@ -11,8 +11,8 @@ public class CYAT{
 		System.out.println("\n");
 		if(args[0].equals("--help") || args.length < 2){
 
-			System.out.println("Formate command as: java CYAT <cipher file> <flag> <keylenght> <key> | keylength is only needed for -poly, -tc and -all, key is only needed for -poly and -all");
-			System.out.println("Flags are: -all | -ic | -freq | -cc | -tc | -poly | --help");
+			System.out.println("Formate command as: java CYAT <cipher file> <flag> <keylenght> <key>\nKeylength is needed for -poly, -split, -tc, and -all, key is only needed for -poly and -all\n");
+			System.out.println("Flags are: -all | -ic | -freq | -cc | -tc | -split | -poly | --help - Only one flag can be used at a time.");
 			return;
 		}
 		In c = new In(args[0]);
@@ -43,6 +43,13 @@ public class CYAT{
 			int keyLength = Integer.parseInt(args[2]);
 			System.out.println("Showing permuations of key length: " + keyLength);
 			DecryptTranspositionCipher(c.getText(), keyLength);
+			System.out.println("\n-----------------------\n");
+		}
+		if(args[1].equals("-all") || args[1].equals("-split")){
+			int keyLength = Integer.parseInt(args[2]);
+			System.out.println("Spliting cipher into alphabets of length: " + keyLength);
+			Poly poly_split = new Poly(c.getText(), "noKey");
+			poly_split.getSplit(keyLength);
 			System.out.println("\n-----------------------\n");
 		}
 
