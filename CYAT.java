@@ -5,13 +5,13 @@ import java.util.*;
 import java.lang.*;
 import java.io.*;
 
-public class Cipher{
+public class CYAT{
 	public static void main(String args[]) {
 		
 		System.out.println("\n");
 		if(args[0].equals("--help") || args.length < 2){
 
-			System.out.println("Formate command as: java Cipher <cipher file> <flag> <keylenght>");
+			System.out.println("Formate command as: java CYAT <cipher file> <flag> <keylenght>");
 			System.out.println("Flags are: -all | -ic | -freq | --help");
 			return;
 		}
