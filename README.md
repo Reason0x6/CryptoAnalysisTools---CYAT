@@ -21,7 +21,7 @@ Keylength is needed for -poly, -split, -tc, and -all, key is only needed for -po
 - The split alphabets of a polyalphabetic cipher based on key length (-split flag )
 - The 26 possible ceaser cipher outputs (Trivial and more of a sanity check) (-cc flag )
 
-# -all
+# The '-all' Tag
 runs through the following tests in order:
 - IC Calc
 - Freq Calc | Numbers & Graph
