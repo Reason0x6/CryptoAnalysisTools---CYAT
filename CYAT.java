@@ -11,7 +11,7 @@ public class CYAT{
 		System.out.println("\n");
 		if(args[0].equals("--help") || args.length < 2){
 
-			System.out.println("Formate command as: java CYAT <cipher file> <flag> <keylenght> <key>\nKeylength is needed for -poly, -split, -tc, and -all, key is only needed for -poly and -all\n");
+			System.out.println("Format command as: java CYAT <cipher file> <flag> <keylenght> <key>\nKeylength is needed for -poly, -split, -tc, and -all, key is only needed for -poly and -all\n");
 			System.out.println("Flags are: -all | -ic | -freq | -cc | -tc | -split | -poly | --help - Only one flag can be used at a time.");
 			return;
 		}
@@ -104,40 +104,42 @@ public class CYAT{
 		while (m.find()){
 		    count ++;
 		}
-  
   		  return count; 
 	}
 
 	static void characterCount(String inputString) 
     { 
-        // Creating a HashMap containing char 
-        // as a key and occurrences as  a value 
-        HashMap<Character, Integer> charCountMap 
-            = new HashMap<Character, Integer>(); 
-  
-        // Converting given string to char array 
-  
+
+        HashMap<Character, Integer> charCountMap  = new HashMap<Character, Integer>(); 
         char[] strArray = inputString.toCharArray(); 
-  
-        // checking each char of strArray 
         for (char c : strArray) { 
             if (charCountMap.containsKey(c)) { 
-  
-                // If char is present in charCountMap, 
-                // incrementing it's count by 1 
                 charCountMap.put(c, charCountMap.get(c) + 1); 
             } 
             else { 
-  
-                // If char is not present in charCountMap, 
-                // putting this char to charCountMap with 1 as it's value 
                 charCountMap.put(c, 1); 
             } 
-        } 
-  
-        // Printing the charCountMap 
+		} 
+
+
         for (Map.Entry entry : charCountMap.entrySet()) { 
-            System.out.println(entry.getKey() + " " + entry.getValue()); 
+			if( !Character.isWhitespace((char)entry.getKey())){ 
+				System.out.println(entry.getKey() + " " + entry.getValue()); 
+			}
+		} 
+		System.out.println("\n Freq Graph \n ---------------------------- \n"); 
+		for (Map.Entry entry : charCountMap.entrySet()) { 
+			if( !Character.isWhitespace((char)entry.getKey())){
+
+				int val = (int)entry.getValue();
+				System.out.print(entry.getKey() + " | "); 
+
+				for(int i = 0; i < val; i++){
+					System.out.print("+"); 
+				}
+
+				System.out.print("\n"); 
+			}
         } 
     } 
 }
