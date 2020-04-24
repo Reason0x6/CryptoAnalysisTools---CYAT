@@ -11,8 +11,8 @@ public class CYAT{
 		System.out.println("\n");
 		if(args[0].equals("--help") || args.length < 2){
 
-			System.out.println("Formate command as: java CYAT <cipher file> <flag> <keylenght>");
-			System.out.println("Flags are: -all | -ic | -freq | --help");
+			System.out.println("Formate command as: java CYAT <cipher file> <flag> <keylenght> <key> | keylength is only needed for -poly, -tc and -all, key is only needed for -poly and -all");
+			System.out.println("Flags are: -all | -ic | -freq | -cc | -tc | -poly | --help");
 			return;
 		}
 		In c = new In(args[0]);
@@ -30,11 +30,28 @@ public class CYAT{
 			
 			System.out.println("\n-----------------------\n");
 		}
+		if(args[1].equals("-all") || args[1].equals("-cc")){
+			System.out.println("Simple Ceaser Cipher Run through for sanity check\n");
+			CC cc = new CC(c.getText());
+			for(int i =0; i < 26; i++){
+				cc.decrypt(i);
+			}
+			System.out.println("-----------------------\n");
+		}
 		
 		if(args[1].equals("-all") || args[1].equals("-tc")){
 			int keyLength = Integer.parseInt(args[2]);
 			System.out.println("Showing permuations of key length: " + keyLength);
 			DecryptTranspositionCipher(c.getText(), keyLength);
+			System.out.println("\n-----------------------\n");
+		}
+
+		if(args[1].equals("-all") || args[1].equals("-poly")){
+			int keyLength = Integer.parseInt(args[2]);
+			String key = (args[3]);
+			System.out.println("Starting polyalphabeti cipher, keylength: " + keyLength + " | key: " + key);
+			Poly poly_decrypt = new Poly(c.getText(), key);
+			poly_decrypt.decrypt();
 			System.out.println("\n-----------------------\n");
 		}
 
