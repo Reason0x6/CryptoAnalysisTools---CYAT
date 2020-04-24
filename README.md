@@ -1,7 +1,3 @@
-# comp3260 Brute Force Solving
+# Cryptography Tool/Analysis
 
-------
-
-Currently tests
-Basic transposition
-ceaser 
+Calculates IC, Letter Frequency, 
