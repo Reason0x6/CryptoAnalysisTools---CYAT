@@ -3,11 +3,11 @@
 use java CYAT --help to get the command options
 
 # Usage referenced here for ease:
-Format command as: java CYAT <cipher file> <flag> <keylenght> <key>
-Keylength is needed for -poly, -split, -tc, and -all, key is only needed for -poly and -all
+Format command as: java CYAT \<cipher file\> \<flag\> \<keylenght\> \<key\>
+Keylength is needed for -poly, -split, -tc, and -all, key is only needed for -mono, -poly and -all
   
 # Flags are: 
--all | -ic | -freq | -cc | -tc | -split | -poly | --help - Only one flag can be used at a time.
+-all | -ic | -freq | -cc | -tc | -mono | -split | -poly | --help - Only one flag can be used at a time.
 
 # Calcuates:
 - IC aka Index of Coincidence (-ic flag )
@@ -15,6 +15,7 @@ Keylength is needed for -poly, -split, -tc, and -all, key is only needed for -po
 
 # Tests
 - Transposition ciphers with a period of input key length (-tc flag )
+- Monoalphabetic Cipher with input alphabet (key)
 - Polyalphabetic Ciphers with input key and key length (-poly flag )
 
 # Produces
@@ -26,6 +27,7 @@ runs through the following tests in order:
 - IC Calc
 - Freq Calc | Numbers & Graph
 - Ceaser Cipher
-- Transpos Cipher
+- Transposition Cipher
+- Monoalphabetic Cipher
 - Splits alpha bets
 - Tests key again polyalphabetic text
