@@ -12,7 +12,7 @@ public class CYAT{
 		if(args[0].equals("--help") || args.length < 2){
 
 			System.out.println("Format command as: java CYAT <cipher file> <flag> <keylenght> <key>\nKeylength is needed for -poly, -split, -tc, and -all, key is only needed for -poly and -all\n");
-			System.out.println("Flags are: -all | -ic | -freq | -cc | -tc | -split | -poly | --help - Only one flag can be used at a time.");
+			System.out.println("Flags are: -all | -ic | -freq | -cc | -tc | -mono | -split | -poly | --help - Only one flag can be used at a time.");
 			return;
 		}
 		In c = new In(args[0]);
@@ -43,6 +43,14 @@ public class CYAT{
 			int keyLength = Integer.parseInt(args[2]);
 			System.out.println("Showing permuations of key length: " + keyLength);
 			DecryptTranspositionCipher(c.getText(), keyLength);
+			System.out.println("\n-----------------------\n");
+		}
+		if(args[1].equals("-all") || args[1].equals("-mono")){
+			int keyLength = Integer.parseInt(args[2]);
+			String key = args[3];
+			System.out.println("Decrypting Using: " + key);
+			Mono mono = new Mono(c.getText());
+			mono.doDecryption(key);
 			System.out.println("\n-----------------------\n");
 		}
 		if(args[1].equals("-all") || args[1].equals("-split")){
@@ -94,8 +102,6 @@ public class CYAT{
 	    return(n * factorial(n-1));    
 	 }    
 	
-	
-
 	static int countOccurences(String str, String word)  
 	{ 
   		Pattern p = Pattern.compile(word);
