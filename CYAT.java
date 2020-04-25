@@ -46,8 +46,7 @@ public class CYAT{
 			System.out.println("\n-----------------------\n");
 		}
 		if(args[1].equals("-all") || args[1].equals("-mono")){
-			int keyLength = Integer.parseInt(args[2]);
-			String key = args[3];
+			String key = args[2];
 			System.out.println("Decrypting Using: " + key);
 			Mono mono = new Mono(c.getText());
 			mono.doDecryption(key);
