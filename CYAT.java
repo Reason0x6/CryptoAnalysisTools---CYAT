@@ -207,7 +207,7 @@ public class CYAT{
 		
 		char[] strArray = inputString.toCharArray(); 
 
-		for(int i=2, j = 1, k=0; i < strArray.length; i++, j++){
+		for(int i=2, j = 1, k=0; i < strArray.length; i++, j++, k++){
 			String s = Character.toString(strArray[k]);
 			s += Character.toString(strArray[j]);
       s += Character.toString(strArray[i]);
