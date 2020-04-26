@@ -7,11 +7,12 @@ Format command as: java CYAT \<cipher file\> \<flag\> \<keylenght\> \<key\>
 Keylength is needed for -poly, -split, -tc, and -all, key is only needed for -mono, -poly and -all
   
 # Flags are: 
--all | -ic | -freq | -cc | -tc | -mono | -split | -poly | --help - Only one flag can be used at a time.
+-all | -ic | -freq | -duo | -trio | -cc | -tc | -mono | -split | -poly | --help - Only one flag can be used at a time.
 
 # Calcuates:
 - IC aka Index of Coincidence (-ic flag )
 - Letter Frequency aka how oftern a letter appears (-freq flag )
+- The reoccurring strings of length 2 & three (-duo & trio)
 
 # Tests
 - Transposition ciphers with a period of input key length (-tc flag )
