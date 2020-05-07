@@ -31,4 +31,4 @@ runs through the following tests in order:
 - Transposition Cipher
 - Monoalphabetic Cipher
 - Splits alpha bets
-- Tests key again polyalphabetic text
+- Tests key against polyalphabetic text
