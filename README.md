@@ -3,7 +3,7 @@
 use java CYAT --help to get the command options
 
 # Usage referenced here for ease:
-Format command as: java CYAT \<cipher file\> \<flag\> \<keylenght\> \<key\>
+Format command as: java CYAT \<cipher file\> \<flag\> \<keylength\> \<key\>
 Keylength is needed for -poly, -split, -tc, and -all, key is only needed for -mono, -poly and -all
   
 # Flags are: 
